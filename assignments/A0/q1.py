@@ -14,10 +14,9 @@ def calculate_distances(x, y):
         distances (numpy.ndarray)
             An array with shape (n, 1)
     """
-    # TODO: Debug
     diff = x - y
     squared = diff ** 2
-    summed = np.sum(squared)
+    summed = np.sum(squared, axis = 1, keepdims=True)
     distances = np.sqrt(summed)
     return distances
 
