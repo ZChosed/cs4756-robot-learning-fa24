@@ -46,9 +46,8 @@ def combine_squares(square_1, square_2, square_3, square_4):
         combined_square (torch.Tensor)
             A tensor with shape (2n, 2n)
     """
-    # TODO: Debug
-    top = torch.cat((square_1, square_2))
-    bottom = torch.cat((square_3, square_4))
+    top = torch.cat((square_1, square_2), axis = 1)
+    bottom = torch.cat((square_3, square_4), axis = 1)
     combined_square = torch.cat((top, bottom))
     return combined_square
 
