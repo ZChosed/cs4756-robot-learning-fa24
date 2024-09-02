@@ -67,5 +67,5 @@ def video_to_filmstrip(video_frames):
         filmstrip (torch.Tensor)
             A tensor with shape (h, w * n_frames, c)
     """
-    # TODO: Implement
-    raise NotImplementedError
+    filmstrip = torch.cat([torch.from_numpy(arr) for arr in video_frames], dim = 1)
+    return filmstrip
