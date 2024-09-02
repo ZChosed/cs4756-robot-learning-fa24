@@ -61,8 +61,8 @@ def train(x, y, model, loss_fn, optimizer, checkpoint_path, num_epochs=1000):
     for i in range(num_epochs):
         model.train()
         optimizer.zero_grad()
-        out = model(x)
-        loss = loss_fn(out,y)
+        y1 = model(x)
+        loss = loss_fn(y1,y)
         loss.backward()
         optimizer.step()
     
