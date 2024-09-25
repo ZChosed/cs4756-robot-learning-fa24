@@ -47,8 +47,8 @@ def train(learner, observations, actions, validation_obs, validation_acts, check
 
 
         # Saving model state if current loss is less than best loss
-        if loss < best_loss:
-            best_loss = loss
+        if epoch_loss < best_loss:
+            best_loss = epoch_loss
             best_model_state = learner.state_dict()
 
     # Save the best performing checkpoint
